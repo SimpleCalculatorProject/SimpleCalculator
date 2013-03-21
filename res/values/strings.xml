@@ -4,5 +4,6 @@
     <string name="app_name">Simple Calculator</string>
     <string name="action_settings">Settings</string>
     <string name="testi">Some Thing</string>
+    <string name="laskuTesti">1+1 \n = 2</string>
 
 </resources>
