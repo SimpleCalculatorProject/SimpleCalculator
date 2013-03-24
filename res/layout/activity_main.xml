@@ -1,19 +1,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity" >
 
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
-        android:layout_height="120dp"
+        android:layout_height="130dp"
         android:orientation="horizontal"
         android:weightSum="1.0" >
 
         <TextView
-            android:id="@+id/ctmbtn1"
+            android:id="@+id/view"
             style="@style/btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -36,7 +36,7 @@
 	<LinearLayout 
 	    android:id="@+id/linearLayout11"
         android:layout_width="fill_parent"
-        android:layout_height="60dp"
+        android:layout_height="70dp"
         android:orientation="horizontal"
         android:weightSum="1.0" >
 		<Button
@@ -46,7 +46,9 @@
             android:layout_height="fill_parent"
             android:layout_weight=".50"
             android:background="@drawable/greybtn"
-            android:text="C" />    
+            android:text="@string/clear"
+            android:onClick="clear" />    
+
         <Button
             android:id="@+id/btnErase"
             style="@style/btn"
@@ -54,13 +56,15 @@
             android:layout_height="fill_parent"
             android:layout_weight=".50"
             android:background="@drawable/greybtn"
-            android:text="⌫" />
+            android:enabled="true"
+            android:text="@string/backrep"
+            android:onClick="erase"/>
 	    
 	</LinearLayout>
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="fill_parent"
-        android:layout_height="60dp"
+        android:layout_height="70dp"
         android:orientation="horizontal"
         android:weightSum="1.0" >
 
@@ -71,7 +75,9 @@
             android:layout_height="fill_parent"
             android:layout_weight=".25"
             android:background="@drawable/csbtn"
-            android:text="X²" />
+            android:text="@string/potency"
+            android:tag="²"
+            android:onClick="doact" />
         <Button
             android:id="@+id/btnSqrRoot"
             style="@style/btn"
@@ -79,7 +85,9 @@
             android:layout_height="fill_parent"
             android:layout_weight=".25"
             android:background="@drawable/csbtn"
-            android:text="√" />
+            android:text="@string/squareroot"
+            android:tag="@string/squareroot"
+            android:onClick="doact" />
 
         <Button
             android:id="@+id/btnDiv"
@@ -88,7 +96,9 @@
             android:layout_height="fill_parent"
             android:layout_weight=".25"
             android:background="@drawable/csbtn"
-            android:text="÷" />
+            android:text="@string/division"
+            android:tag="@string/division"
+            android:onClick="doact" />
 
         <Button
             android:id="@+id/btnMulti"
@@ -97,14 +107,16 @@
             android:layout_height="fill_parent"
             android:layout_weight=".25"
             android:background="@drawable/csbtn"
-            android:text="X" />
+            android:text="@string/multiply"
+            android:tag="@string/multiply"
+            android:onClick="doact" />
         
         
     </LinearLayout>
     <LinearLayout 
         android:id="@+id/linearLayout3"
         android:layout_width="fill_parent"
-        android:layout_height="60dp"
+        android:layout_height="70dp"
         android:weightSum="1.0"
         android:orientation ="horizontal" >
         
@@ -115,7 +127,9 @@
             android:layout_height="fill_parent"
             android:layout_weight=".25"
             android:background="@drawable/csbtn"
-            android:text = "7"/>
+            android:text = "@string/no7"
+            android:onClick="don"
+            android:tag="7"/>
         <Button 
             android:id ="@+id/button8"
             style="@style/btn"
@@ -123,7 +137,9 @@
             android:layout_height="fill_parent"
             android:layout_weight=".25"
             android:background="@drawable/csbtn"
-            android:text = "8"/>
+            android:text = "@string/no8"
+            android:onClick="don"
+            android:tag="8"/>
         <Button 
             android:id ="@+id/button9"
             style="@style/btn"
@@ -131,7 +147,9 @@
             android:layout_height="fill_parent"
             android:layout_weight=".25"
             android:background="@drawable/csbtn"
-            android:text = "9"/>
+            android:text = "@string/no9"
+            android:tag="9"
+            android:onClick="don"/>
         <Button 
             android:id ="@+id/btnPlus"
             style="@style/btn"
@@ -139,12 +157,14 @@
             android:layout_height="fill_parent"
             android:layout_weight=".25"
             android:background="@drawable/csbtn"
-            android:text = "+"/>
+            android:tag="+"
+            android:onClick = "don"
+            android:text = "@string/plus"/>
     </LinearLayout>
     <LinearLayout 
         android:id="@+id/linearLayout4"
         android:layout_width="fill_parent"
-        android:layout_height="60dp"
+        android:layout_height="70dp"
         android:weightSum="1.0"
         android:orientation ="horizontal" >
         
@@ -155,7 +175,9 @@
             android:layout_height="fill_parent"
             android:layout_weight=".25"
             android:background="@drawable/csbtn"
-            android:text = "4"/>
+            android:text = "@string/no4"
+            android:tag = "4"
+            android:onClick="don"/>
         <Button 
             android:id ="@+id/button5"
             style="@style/btn"
@@ -163,7 +185,9 @@
             android:layout_height="fill_parent"
             android:layout_weight=".25"
             android:background="@drawable/csbtn"
-            android:text = "5"/>
+            android:text = "@string/no5"
+            android:tag="5"
+            android:onClick="don"/>
         <Button 
             android:id ="@+id/button6"
             style="@style/btn"
@@ -171,7 +195,9 @@
             android:layout_height="fill_parent"
             android:layout_weight=".25"
             android:background="@drawable/csbtn"
-            android:text = "6"/>
+            android:text = "@string/no6"
+            android:tag="6"
+            android:onClick="don"/>
         <Button 
             android:id ="@+id/btnMinus"
             style="@style/btn"
@@ -179,7 +205,9 @@
             android:layout_height="fill_parent"
             android:layout_weight=".25"
             android:background="@drawable/csbtn"
-            android:text = "-"/>
+            android:text = "@string/minus"
+            android:tag="-"
+            android:onClick="don"/>
     </LinearLayout>
     <LinearLayout 
         android:id="@+id/linearLayout5"
@@ -195,7 +223,9 @@
             android:layout_height="fill_parent"
             android:layout_weight=".25"
             android:background="@drawable/csbtn"
-            android:text = "1"/>
+            android:text = "@string/no1"
+            android:tag="1"
+            android:onClick="don"/>
         
         <Button 
             android:id ="@+id/button2"
@@ -204,7 +234,9 @@
             android:layout_height="fill_parent"
             android:layout_weight=".25"
             android:background="@drawable/csbtn"
-            android:text = "2"/>
+            android:text = "@string/no2"
+            android:tag="2"
+            android:onClick="don"/>
         
         <Button 
             android:id ="@+id/button3"
@@ -213,7 +245,9 @@
             android:layout_height="fill_parent"
             android:layout_weight=".25"
             android:background="@drawable/csbtn"
-            android:text = "3"/>
+            android:text = "@string/no3"
+            android:tag="3"
+            android:onClick="don"/>
         
         <Button 
             android:id ="@+id/btnAns"
@@ -222,14 +256,16 @@
             android:layout_height="fill_parent"
             android:layout_weight=".25"
             android:background="@drawable/csbtn"
-            android:text = "ANS"/>
+            android:text = "@string/answer"
+            android:tag="ANS"
+            android:onClick="doact"/>
         
     </LinearLayout>
     
     <LinearLayout 
         android:id="@+id/linearLayout6"
         android:layout_width="fill_parent"
-        android:layout_height="60dp"
+        android:layout_height="70dp"
         android:weightSum="1.0"
         android:orientation ="horizontal" >
         
@@ -240,7 +276,9 @@
             android:layout_height="fill_parent"
             android:layout_weight=".25"
             android:background="@drawable/csbtn"
-            android:text = "."/>
+            android:text = "@string/point"
+            android:tag="."
+            android:onClick="don"/>
         
         <Button 
             android:id ="@+id/button0"
@@ -249,7 +287,9 @@
             android:layout_height="fill_parent"
             android:layout_weight=".25"
             android:background="@drawable/csbtn"
-            android:text = "0"/>
+            android:text = "@string/no0"
+            android:tag="0"
+            android:onClick="don"/>
         
         <Button 
             android:id ="@+id/btnBracket"
@@ -258,7 +298,8 @@
             android:layout_height="fill_parent"
             android:layout_weight=".25"
             android:background="@drawable/csbtn"
-            android:text = "( )"/>
+            android:text = "@string/brackets"
+            android:onClick="brac"/>
         
         <Button 
             android:id ="@+id/btnEqual"
@@ -267,7 +308,8 @@
             android:layout_height="fill_parent"
             android:layout_weight=".25"
             android:background="@drawable/oragebtn"
-            android:text = "="/>
+            android:text = "@string/equalto"
+            android:onClick="calc"/>
         
     </LinearLayout>
 

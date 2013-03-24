@@ -21,11 +21,12 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int csbtn=0x7f020000;
-        public static final int digis=0x7f020001;
-        public static final int greybtn=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
-        public static final int oragebtn=0x7f020004;
+        public static final int backspace=0x7f020000;
+        public static final int csbtn=0x7f020001;
+        public static final int digis=0x7f020002;
+        public static final int greybtn=0x7f020003;
+        public static final int ic_launcher=0x7f020004;
+        public static final int oragebtn=0x7f020005;
     }
     public static final class id {
         public static final int action_settings=0x7f09001f;
@@ -51,7 +52,6 @@ public final class R {
         public static final int button8=0x7f09000d;
         public static final int button9=0x7f09000e;
         public static final int buttonClear=0x7f090004;
-        public static final int ctmbtn1=0x7f090001;
         public static final int linearLayout1=0x7f090000;
         public static final int linearLayout11=0x7f090003;
         public static final int linearLayout112=0x7f090002;
@@ -60,6 +60,7 @@ public final class R {
         public static final int linearLayout4=0x7f090010;
         public static final int linearLayout5=0x7f090015;
         public static final int linearLayout6=0x7f09001a;
+        public static final int view=0x7f090001;
     }
     public static final class integer {
         public static final int GridrowCount=0x7f050000;
@@ -72,8 +73,31 @@ public final class R {
     }
     public static final class string {
         public static final int action_settings=0x7f060001;
+        public static final int answer=0x7f060019;
         public static final int app_name=0x7f060000;
+        public static final int backrep=0x7f06001a;
+        public static final int backspace=0x7f060012;
+        public static final int brackets=0x7f060018;
+        public static final int clear=0x7f060013;
+        public static final int division=0x7f060011;
+        public static final int equalto=0x7f060017;
         public static final int laskuTesti=0x7f060003;
+        public static final int minus=0x7f06000f;
+        public static final int multiply=0x7f060010;
+        public static final int no0=0x7f06000d;
+        public static final int no1=0x7f060004;
+        public static final int no2=0x7f060005;
+        public static final int no3=0x7f060006;
+        public static final int no4=0x7f060007;
+        public static final int no5=0x7f060008;
+        public static final int no6=0x7f060009;
+        public static final int no7=0x7f06000a;
+        public static final int no8=0x7f06000b;
+        public static final int no9=0x7f06000c;
+        public static final int plus=0x7f06000e;
+        public static final int point=0x7f060016;
+        public static final int potency=0x7f060014;
+        public static final int squareroot=0x7f060015;
         public static final int testi=0x7f060002;
     }
     public static final class style {
