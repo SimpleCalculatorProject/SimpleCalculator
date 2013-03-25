@@ -10,7 +10,7 @@
         <LinearLayout
             android:id="@+id/linearLayout1"
             android:layout_width="fill_parent"
-            android:layout_height="135dp"
+            android:layout_height="120dp"
             android:orientation="horizontal"
             android:weightSum="1.0" >
 
@@ -31,7 +31,7 @@
         <LinearLayout
             android:id="@+id/linearLayout112"
             android:layout_width="fill_parent"
-            android:layout_height="10dp"
+            android:layout_height="5dp"
             android:orientation="horizontal"
             android:weightSum="1.0" >
         </LinearLayout>
@@ -39,7 +39,7 @@
         <LinearLayout
             android:id="@+id/linearLayout11"
             android:layout_width="fill_parent"
-            android:layout_height="60dp"
+            android:layout_height="55dp"
             android:orientation="horizontal"
             android:weightSum="1.0" >
 
@@ -68,7 +68,7 @@
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="fill_parent"
-            android:layout_height="60dp"
+            android:layout_height="55dp"
             android:orientation="horizontal"
             android:weightSum="1.0" >
 
@@ -120,7 +120,7 @@
         <LinearLayout
             android:id="@+id/linearLayout3"
             android:layout_width="fill_parent"
-            android:layout_height="60dp"
+            android:layout_height="55dp"
             android:orientation="horizontal"
             android:weightSum="1.0" >
 
@@ -172,7 +172,7 @@
         <LinearLayout
             android:id="@+id/linearLayout4"
             android:layout_width="fill_parent"
-            android:layout_height="60dp"
+            android:layout_height="55dp"
             android:orientation="horizontal"
             android:weightSum="1.0" >
 
@@ -224,7 +224,7 @@
         <LinearLayout
             android:id="@+id/linearLayout5"
             android:layout_width="fill_parent"
-            android:layout_height="60dp"
+            android:layout_height="55dp"
             android:orientation="horizontal"
             android:weightSum="1.0" >
 
@@ -276,7 +276,7 @@
         <LinearLayout
             android:id="@+id/linearLayout6"
             android:layout_width="fill_parent"
-            android:layout_height="60dp"
+            android:layout_height="55dp"
             android:orientation="horizontal" >
 
             <Button

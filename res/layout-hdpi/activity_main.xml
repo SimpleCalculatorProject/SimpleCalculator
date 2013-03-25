@@ -31,7 +31,7 @@
         <LinearLayout
             android:id="@+id/linearLayout112"
             android:layout_width="fill_parent"
-            android:layout_height="10dp"
+            android:layout_height="13dp"
             android:orientation="horizontal"
             android:weightSum="1.0" >
         </LinearLayout>
