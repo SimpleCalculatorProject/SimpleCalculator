@@ -23,7 +23,7 @@
                 android:background="@drawable/digis"
                 android:clickable="false"
                 android:gravity="center_vertical"
-                android:text="@string/laskuTesti"
+                android:text="@string/no0"
                 android:textColor="#000000"
                 android:textSize="25sp" />
         </LinearLayout>
@@ -79,7 +79,7 @@
                 android:layout_height="fill_parent"
                 android:layout_weight=".25"
                 android:background="@drawable/csbtn"
-                android:onClick="doact"
+                android:onClick="tosecond"
                 android:tag="²"
                 android:text="@string/potency" />
 
@@ -90,7 +90,7 @@
                 android:layout_height="fill_parent"
                 android:layout_weight=".25"
                 android:background="@drawable/csbtn"
-                android:onClick="doact"
+                android:onClick="squeroot"
                 android:tag="@string/squareroot"
                 android:text="@string/squareroot" />
 
@@ -164,7 +164,7 @@
                 android:layout_height="fill_parent"
                 android:layout_weight=".25"
                 android:background="@drawable/csbtn"
-                android:onClick="don"
+                android:onClick="doact"
                 android:tag="+"
                 android:text="@string/plus" />
         </LinearLayout>
@@ -216,7 +216,7 @@
                 android:layout_height="fill_parent"
                 android:layout_weight=".25"
                 android:background="@drawable/csbtn"
-                android:onClick="don"
+                android:onClick="doact"
                 android:tag="-"
                 android:text="@string/minus" />
         </LinearLayout>
@@ -268,8 +268,8 @@
                 android:layout_height="fill_parent"
                 android:layout_weight=".25"
                 android:background="@drawable/csbtn"
-                android:onClick="doact"
-                android:tag="ANS"
+                android:onClick="don"
+                android:tag="ans"
                 android:text="@string/answer" />
         </LinearLayout>
 

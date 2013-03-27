@@ -23,7 +23,7 @@
                 android:background="@drawable/digis"
                 android:clickable="false"
                 android:gravity="center_vertical"
-                android:text="@string/laskuTesti"
+                android:text="@string/no0"
                 android:textColor="#000000"
                 android:textSize="25sp" />
         </LinearLayout>
@@ -164,7 +164,7 @@
                 android:layout_height="fill_parent"
                 android:layout_weight=".25"
                 android:background="@drawable/csbtn"
-                android:onClick="don"
+                android:onClick="doact"
                 android:tag="+"
                 android:text="@string/plus" />
         </LinearLayout>
@@ -216,7 +216,7 @@
                 android:layout_height="fill_parent"
                 android:layout_weight=".25"
                 android:background="@drawable/csbtn"
-                android:onClick="don"
+                android:onClick="doact"
                 android:tag="-"
                 android:text="@string/minus" />
         </LinearLayout>
