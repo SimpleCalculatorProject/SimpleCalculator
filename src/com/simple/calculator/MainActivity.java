@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
@@ -21,31 +20,10 @@ public class MainActivity extends Activity {
 	public String buffer = null;										//This String is buffer for adding numbers to the calculate Sting ArrayList
 	public String ans = "0";											//This Sting holds last answer that is calculated and it has default value of 0
 	/*
-	 * Here is variables for components in interface
+	 * Here is interface TextView
 	 */
 	TextView screen;
-	Button btn0;
-	Button btn1;
-	Button btn2;
-	Button btn3;
-	Button btn4;
-	Button btn5;
-	Button btn6;
-	Button btn7;
-	Button btn8;
-	Button btn9;
-	Button plus;
-	Button minus;
-	Button multiply;
-	Button division;
-	Button equalto;
-	Button potency;
-	Button squareRoot;
-	Button brackets;
-	Button point;
-	Button answer;
-	Button clear;
-	Button backSpace;
+	
 	/*
 	 * Hear is few static variables for some important chars
 	 */
@@ -61,33 +39,6 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		screen = (TextView) findViewById(R.id.view);
-		/*
-		 * TODO This code needs to be revalued if it is relevant or anyway important
-		 * This may just be legacy code that has no meaning for this class anymore
-		 */
-		btn0 = (Button) findViewById(R.id.button0);
-		btn1 = (Button) findViewById(R.id.button1);
-		btn2 = (Button) findViewById(R.id.button2);
-		btn3 = (Button)	findViewById(R.id.button3);
-		btn4 = (Button) findViewById(R.id.button4);
-		btn5 = (Button) findViewById(R.id.button5);
-		btn6 = (Button) findViewById(R.id.button6);
-		btn7 = (Button) findViewById(R.id.button7);
-		btn8 = (Button) findViewById(R.id.button8);
-		btn9 = (Button) findViewById(R.id.button9);
-		plus = (Button) findViewById(R.id.btnPlus);
-		minus = (Button) findViewById(R.id.btnMinus);
-		multiply = (Button) findViewById(R.id.btnMulti);
-		division = (Button) findViewById(R.id.btnDiv);
-		equalto = (Button) findViewById(R.id.btnEqual);
-		potency = (Button) findViewById(R.id.btnPotens);
-		squareRoot = (Button) findViewById(R.id.btnSqrRoot);
-		brackets = (Button) findViewById(R.id.btnBracket);
-		clear = (Button) findViewById(R.id.buttonClear); 
-		backSpace = (Button) findViewById(R.id.btnErase);
-		answer = (Button) findViewById(R.id.btnAns);
-		point = (Button) findViewById(R.id.btnPoint);
-		
 		
 	}
 	public void updScreen(){

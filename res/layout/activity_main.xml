@@ -31,7 +31,7 @@
         <LinearLayout
             android:id="@+id/linearLayout112"
             android:layout_width="fill_parent"
-            android:layout_height="10dp"
+            android:layout_height="13dp"
             android:orientation="horizontal"
             android:weightSum="1.0" >
         </LinearLayout>
@@ -79,7 +79,7 @@
                 android:layout_height="fill_parent"
                 android:layout_weight=".25"
                 android:background="@drawable/csbtn"
-                android:onClick="doact"
+                android:onClick="tosecond"
                 android:tag="²"
                 android:text="@string/potency" />
 
@@ -90,7 +90,7 @@
                 android:layout_height="fill_parent"
                 android:layout_weight=".25"
                 android:background="@drawable/csbtn"
-                android:onClick="doact"
+                android:onClick="squeroot"
                 android:tag="@string/squareroot"
                 android:text="@string/squareroot" />
 
@@ -268,8 +268,8 @@
                 android:layout_height="fill_parent"
                 android:layout_weight=".25"
                 android:background="@drawable/csbtn"
-                android:onClick="doact"
-                android:tag="ANS"
+                android:onClick="don"
+                android:tag="ans"
                 android:text="@string/answer" />
         </LinearLayout>
 
