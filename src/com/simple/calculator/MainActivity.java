@@ -31,6 +31,10 @@ public class MainActivity extends Activity {
 	public static String SQROOT = "√";
 	public static String OBRACKET = "(";
 	public static String CBRACKET = ")";
+	public static String DIVISION = "÷";
+	public static String MULTIPLY = "x";
+	public static String PLUS = "+";
+	public static String MINUS = "-";
 	
 	
 	
@@ -166,6 +170,40 @@ public class MainActivity extends Activity {
 	}
 	public void calc(View v){
 		//TODO jos laskutoimitus on viimeinen merkki niin se pitaa poistaa
+		String tmp = this.calculate.get(this.calculate.size()-1);
+		if (tmp.equals(SQROOT) || tmp.equals(MULTIPLY) || tmp.equals(MINUS) || tmp.equals(PLUS) || tmp.equals(DIVISION) || tmp.equals(OBRACKET)){
+			if (this.calculate.size() == 1 && tmp.equals(OBRACKET)){
+				this.calculate = new ArrayList<String>();
+				return;
+			}
+			else if (tmp.equals(OBRACKET)){
+				this.calculate.remove(this.calculate.size()-1);
+				this.calculate.remove(this.calculate.size()-1);
+			}
+			else{
+				this.calculate.remove(this.calculate.size()-1);
+			}
+		}
+		int open = 0;
+		for (int i = 0; i < this.calculate.size(); i++){
+			if (this.calculate.get(i).equals(OBRACKET)) open++;
+			else if (this.calculate.get(i).equals(CBRACKET)) open--;
+			else if (this.calculate.get(i).equals(MULTIPLY)) this.calculate.set(i, "*");
+		}
+		while (open > 0){
+			this.calculate.add(CBRACKET);
+		}
+		try {
+			new Calculate(this.calculate);
+			this.ans = Calculate.getResult();
+			this.screen.setText(this.ans);
+		}
+		catch(java.lang.Exception e) {
+			this.screen.setText("ERROR");
+			this.ans = "0";
+		}
+		this.calculate = new ArrayList<String>();
+		this.buffer = null;
 	}
 	public void brac(View v){
 		/**
