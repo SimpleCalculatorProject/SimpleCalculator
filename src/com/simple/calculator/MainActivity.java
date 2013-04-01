@@ -106,8 +106,11 @@ public class MainActivity extends Activity {
 		/**
 		 * doact() is used button listener for actions/mark (like +, - or x) buttons like
 		 */
-		if (calculate.size() == 0) return;
-		if (this.buffer != null){
+		if (calculate.size() == 0){
+			calculate.add(ans);
+			this.calculate.add((String) v.getTag());
+		}
+		else if (this.buffer != null){
 			this.calculate.add((String) v.getTag());
 			buffer = null;
 			this.updScreen();
@@ -170,6 +173,7 @@ public class MainActivity extends Activity {
 	}
 	public void calc(View v){
 		//TODO jos laskutoimitus on viimeinen merkki niin se pitaa poistaa
+		if (this.calculate.size() == 1) return;
 		String tmp = this.calculate.get(this.calculate.size()-1);
 		if (tmp.equals(SQROOT) || tmp.equals(MULTIPLY) || tmp.equals(MINUS) || tmp.equals(PLUS) || tmp.equals(DIVISION) || tmp.equals(OBRACKET)){
 			if (this.calculate.size() == 1 && tmp.equals(OBRACKET)){
@@ -192,11 +196,18 @@ public class MainActivity extends Activity {
 		}
 		while (open > 0){
 			this.calculate.add(CBRACKET);
+			open--;
 		}
 		try {
 			new Calculate(this.calculate);
 			this.ans = Calculate.getResult();
-			this.screen.setText(this.ans);
+			double test = Double.parseDouble(this.ans);
+			if (test%1==0){
+				int tt = (int) test;
+				this.ans = Integer.toString(tt);
+			}
+			String lastText = (String) this.screen.getText();
+			this.screen.setText(lastText + "=\n"+this.ans);
 		}
 		catch(java.lang.Exception e) {
 			this.screen.setText("ERROR");
@@ -237,6 +248,7 @@ public class MainActivity extends Activity {
 		 * tosecond() is button listener method for potency button
 		 */
 		if (this.buffer == null ){
+			if (calculate.size() == 0) return;
 			if (calculate.get(calculate.size()-1).equals(CBRACKET)){
 				calculate.add(POTENS);
 			}
