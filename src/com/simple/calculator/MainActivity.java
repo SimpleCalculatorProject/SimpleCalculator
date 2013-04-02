@@ -238,8 +238,7 @@ public class MainActivity extends Activity {
 			// Then ans will be simplified if possible by using double and integer variables 
 			double test = Double.parseDouble(this.ans);
 			if (test%1==0){
-				int tt = (int) test;
-				this.ans = Integer.toString(tt);
+				this.ans = this.ans.substring(0, this.ans.length()-2);
 			}
 			// Last ans will be set for screen
 			String lastText = (String) this.screen.getText();
