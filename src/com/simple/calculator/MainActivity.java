@@ -194,13 +194,14 @@ public class MainActivity extends Activity {
 		 * calc() is button listener for "=" symbol and does the calculating. calc() calls Calculate.java with does calculating in this application
 		 */
 		//if calculate size is 1 then nothing will be done
-		if (this.calculate.size() == 1) return;	
+		if (this.calculate.size() == 0) return;	
 		String tmp = this.calculate.get(this.calculate.size()-1);
 		//if last symbol in calculate is of the following [ +, -, x, ÷, √, ( ] then last symbol will be removed from calculate because it would cause error
 		if (tmp.equals(SQROOT) || tmp.equals(MULTIPLY) || tmp.equals(MINUS) || tmp.equals(PLUS) || tmp.equals(DIVISION) || tmp.equals(OBRACKET)){
 			// if only symbol in calculate is "(" then calculate will be initialized and nothing else will be done
 			if (this.calculate.size() == 1 && tmp.equals(OBRACKET)){
 				this.calculate = new ArrayList<String>();
+				this.updScreen();
 				return;
 			}
 			else if (tmp.equals(OBRACKET)){
@@ -227,6 +228,7 @@ public class MainActivity extends Activity {
 			this.calculate.add(CBRACKET);
 			open--;
 		}
+		this.updScreen();
 		try {
 			// Try Catch is used to ensure that if some illegal calculate is give for Calculate.java then application don't crash and gives user error message
 			// First in this try calculate we call Calculate.java and give calculate for it
@@ -246,6 +248,7 @@ public class MainActivity extends Activity {
 		catch(java.lang.Exception e) {
 			// if there is error or exception in try bloc and error message will be given for user
 			this.screen.setText("ERROR");
+			//System.out.print(e.toString());
 			this.ans = "0";
 		}
 		// Buffer is emptied and if calculate is initialize
@@ -273,6 +276,7 @@ public class MainActivity extends Activity {
 				else if (close == open && tmp.equals(CBRACKET)) return;					//	-if there are no open brackets and last symbol is closing bracket then nothing will be done
 				else calculate.add(OBRACKET);											//	-in all other cases we will add opening bracket
 			}
+			else if (tmp.equals(POTENS) && close < open) calculate.add(CBRACKET);
 			else if (buffer != null && close < open){									//if buffer isn't empty and there are open brackets then buffer will be emptied and closing bracket 
 				buffer = null;
 				calculate.add(CBRACKET);
@@ -302,10 +306,15 @@ public class MainActivity extends Activity {
 		 * squeroot() is button listener for square root button
 		 */
 		if (this.buffer != null) return;									//if buffer isn't null then nothing will be done
-		if (calculate.size() != 0)											
-			if (calculate.get(calculate.size()-1).equals(POTENS))
-				return;
-		calculate.add(SQROOT);												//if last symbol is not potens then square root will be added
+		if (calculate.size() != 0){										
+			if (calculate.get(calculate.size()-1).equals(POTENS)) return;
+			else if (calculate.get(calculate.size()-1).equals(SQROOT)){
+				calculate.add(OBRACKET);
+				calculate.add(SQROOT);
+			}
+			else calculate.add(SQROOT);
+		}
+		else calculate.add(SQROOT);												//if last symbol is not potens then square root will be added
 		this.updScreen();
 	}
 	

@@ -99,6 +99,9 @@ public class Calculate {
 				}
 			}
 		}
+		if (array.size() == 1){
+			result = array.get(0);
+		}
 	}
 	
 	public static String addition(String x, String y){	// Calculates x + y
