@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Calculate {
 	
-	static String result;
+	static String result = "0";
 	
 	public Calculate(ArrayList<String> list){
 		

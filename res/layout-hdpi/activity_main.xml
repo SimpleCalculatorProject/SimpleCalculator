@@ -51,7 +51,8 @@
                 android:layout_weight=".50"
                 android:background="@drawable/greybtn"
                 android:onClick="clear"
-                android:text="@string/clear" />
+                android:text="@string/clear" 
+                android:textSize="25sp"/>
 
             <Button
                 android:id="@+id/btnErase"
@@ -62,7 +63,8 @@
                 android:background="@drawable/greybtn"
                 android:enabled="true"
                 android:onClick="erase"
-                android:text="@string/backrep" />
+                android:text="@string/backrep"
+                android:textSize="30sp" />
         </LinearLayout>
 
         <LinearLayout
