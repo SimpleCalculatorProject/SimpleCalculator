@@ -148,6 +148,22 @@ public class Calculate {
 		return result;
 	}
 	
+	public static ArrayList<String> equation(double a, double b, double c){	// Solves first and second degree equations
+		double result1;
+		ArrayList<String> result3 = new ArrayList<String>();
+		if (a == 0){
+			result1 = (-c) / b;
+			result3.add(Double.toString(result1));
+		}
+		else{
+			result1 = (-b + Math.sqrt(b * b - 4 * a * c)) / (2 * a);
+			double result2 = (-b - Math.sqrt(b * b - 4 * a * c)) / (2 * a);
+			result3.add(Double.toString(result1));
+			result3.add(Double.toString(result2));
+		}
+		return result3;
+	}
+	
 	public static void main(String [] args){
 		ArrayList<String> list = new ArrayList<String>();
 		list.add("7");

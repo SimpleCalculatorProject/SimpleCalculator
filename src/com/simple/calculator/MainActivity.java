@@ -4,9 +4,7 @@ import java.util.ArrayList;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.content.Intent;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -324,20 +322,6 @@ public class MainActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
-	}
-	public boolean onOptionsItemSelected(MenuItem item) {
-	    // Handle item selection
-	    switch (item.getItemId()) {
-	    	case R.id.menuAbout:
-	    		Intent about = new Intent(MainActivity.this, AboutActivity.class);
-	    		MainActivity.this.startActivity(about);
-	    		return true;
-	    	case R.id.menuExtra:
-	    		this.screen.setText("EXTRA");
-	    		return true;
-	    	default:
-	    		return false;
-	    }
 	}
 
 }
