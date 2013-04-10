@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Simple Calculator</string>
-    <string name="action_settings">Settings</string>
+    <string name="menu_about">About Simple Calculator</string>
     <string name="testi">Some Thing</string>
     <string name="laskuTesti">1+1 \n = 2</string>
     <string name="no1">1</string>
@@ -28,9 +28,8 @@
     <string name="brackets">(  )</string>
     <string name="answer">ANS</string>
     <string name="backrep">⇐</string>
-    <string name="equation1">x² +</string>
-    <string name="equation2">x +</string>
-    <string name="equation3">= 0</string>
-    <string name="equationresult">Result</string>
+    <string name="menu_extra">Extra</string>
+    <string name="logo_description">Simple Calculator Logo</string>
+    <string name="credits">Simple Calculator is created by Patrick Patoila and Simo Haakana and it is Aalto University Course project</string>
 
 </resources>
