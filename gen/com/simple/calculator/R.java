@@ -34,6 +34,7 @@ public final class R {
     }
     public static final class id {
         public static final int about_description=0x7f090000;
+        public static final int back_calulation=0x7f090022;
         public static final int btnAns=0x7f09001a;
         public static final int btnBracket=0x7f09001e;
         public static final int btnDiv=0x7f09000a;
@@ -77,6 +78,7 @@ public final class R {
     }
     public static final class menu {
         public static final int main=0x7f080000;
+        public static final int second=0x7f080001;
     }
     public static final class string {
         public static final int answer=0x7f060019;
@@ -107,6 +109,7 @@ public final class R {
         public static final int plus=0x7f06000e;
         public static final int point=0x7f060016;
         public static final int potency=0x7f060014;
+        public static final int return_to_calculator=0x7f06001e;
         public static final int squareroot=0x7f060015;
         public static final int testi=0x7f060002;
     }

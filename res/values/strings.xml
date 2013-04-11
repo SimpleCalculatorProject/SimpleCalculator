@@ -31,5 +31,6 @@
     <string name="menu_extra">Extra</string>
     <string name="logo_description">Simple Calculator Logo</string>
     <string name="credits">Simple Calculator is created by Patrick Patoila and Simo Haakana and it is Aalto University Course project</string>
+    <string name="return_to_calculator">Return to calculator</string>
 
 </resources>
