@@ -10,5 +10,6 @@
         android:id="@+id/menuExtra"
         android:orderInCategory="100"
         android:title="@string/menu_extra"/>
+    <item android:id="@+id/menuEquation" android:title="@string/menu_equation" android:showAsAction="never" android:orderInCategory="100"></item>
 
 </menu>

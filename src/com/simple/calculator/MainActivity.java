@@ -332,6 +332,10 @@ public class MainActivity extends Activity {
 	    		Intent about = new Intent(MainActivity.this, AboutActivity.class);
 	    		MainActivity.this.startActivity(about);
 	    		return true;
+	    	case R.id.menuEquation:
+	    		Intent equation = new Intent(MainActivity.this, EquationActivity.class);
+	    		MainActivity.this.startActivity(equation);
+	    		return true;
 	    	case R.id.menuExtra:
 	    		this.screen.setText("EXTRA");
 	    		return true;
