@@ -9,13 +9,18 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         
-        <EditText 
+        <EditText
             android:id="@+id/editText1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="4"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:nextFocusDown="@+id/editText2"
+            android:nextFocusForward="@+id/editText2"
+            android:nextFocusLeft="@+id/editText2"
+            android:nextFocusRight="@+id/editText2"
+            android:nextFocusUp="@+id/editText2" />
         
         <TextView 
             android:id="@+id/textView1"
@@ -24,13 +29,18 @@
             android:layout_weight="1"
             android:text="@string/equation1" />
         
-        <EditText 
+        <EditText
             android:id="@+id/editText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="4"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:nextFocusDown="@+id/editText3"
+            android:nextFocusForward="@+id/editText3"
+            android:nextFocusLeft="@+id/editText3"
+            android:nextFocusRight="@+id/editText3"
+            android:nextFocusUp="@+id/editText3" />
         
         <TextView 
             android:id="@+id/textView2"
@@ -45,7 +55,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="4"
-            android:inputType="numberDecimal" />
+            android:imeOptions="actionDone"
+            android:inputType="numberDecimal"
+            android:nextFocusDown="@+id/textView3"
+            android:nextFocusForward="@+id/textView3"
+            android:nextFocusLeft="@+id/textView3"
+            android:nextFocusRight="@+id/textView3"
+            android:nextFocusUp="@+id/textView3"  />
         
         <TextView 
             android:id="@+id/textView3"
