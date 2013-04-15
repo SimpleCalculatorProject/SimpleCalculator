@@ -121,6 +121,8 @@ public class MainActivity extends Activity {
 			calculate.add(ans);
 			this.calculate.add((String) v.getTag());
 		}
+		// if open bracket is only object in calculate then nothing is done
+		else if (this.calculate.get(calculate.size()-1).equals(OBRACKET)&&calculate.size()==1)return;
 		else if (this.buffer != null){
 			// if buffer isn't empty symbol is added to calculate and buffer is emptied
 			this.calculate.add((String) v.getTag());
@@ -138,6 +140,12 @@ public class MainActivity extends Activity {
 			else if (tmp.equals(SQROOT)) return;
 			// if buffer is empty and last symbol isn't potens, square root or closing bracket then symbol is added to calculate in way that it replaces last symbol
 			else {
+				// if opening bracket is in calculate and new operator is given opening bracket will be wiped
+				if (this.calculate.get(calculate.size()-1).equals("(")){
+					this.calculate.remove(calculate.size()-1);
+					this.updScreen();
+					return;
+				}
 				this.calculate.set(calculate.size()-1, (String) v.getTag());
 			}
 		}
