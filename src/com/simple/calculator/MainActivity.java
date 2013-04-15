@@ -191,10 +191,7 @@ public class MainActivity extends Activity {
 			// In other case last symbol is removed and if next to last string is number string then it will be set to buffer
 			else {
 				calculate.remove(calculate.size()-1);
-				tmp = this.calculate.get(this.calculate.size()-1);
-				if (tmp.equals(POTENS)) ;
-				else if (tmp.equals(CBRACKET)) ;
-				else buffer = tmp;
+				buffer = null;
 			}
 		}
 		this.updScreen();
