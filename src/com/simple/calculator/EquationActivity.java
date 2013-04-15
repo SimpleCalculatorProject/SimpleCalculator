@@ -33,11 +33,19 @@ public class EquationActivity extends Activity {
 			public boolean onEditorAction(TextView v, int actionId,
 					KeyEvent event) {
 				if (actionId == EditorInfo.IME_ACTION_DONE) {
-					ArrayList<String> a = Calculate.equation(Double.parseDouble(first.getText().toString()), Double.parseDouble(second.getText().toString()), Double.parseDouble(third.getText().toString()));
-					String pr = "";
-					for (String s : a)
-						pr += s + "\n";
-					res.setText(pr);
+					try {
+						ArrayList<String> a = Calculate.equation(Double.parseDouble(first.getText().toString()), Double.parseDouble(second.getText().toString()), Double.parseDouble(third.getText().toString()));
+						if (a.get(0).equals("NaN")) res.setText("No Real Roots");
+						else{
+							String pr = "";
+							for (String s : a)
+								pr += s + "\n";
+							res.setText(pr);
+						}
+					}
+					catch (Exception ex){
+						first.requestFocus();
+					}
 				}
 				return false;
 			}

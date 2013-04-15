@@ -34,7 +34,7 @@ public final class R {
     }
     public static final class id {
         public static final int about_description=0x7f090000;
-        public static final int back_calulation=0x7f090029;
+        public static final int back_calulation=0x7f09002a;
         public static final int btnAns=0x7f09001a;
         public static final int btnBracket=0x7f09001e;
         public static final int btnDiv=0x7f09000a;
@@ -68,12 +68,13 @@ public final class R {
         public static final int linearLayout4=0x7f090011;
         public static final int linearLayout5=0x7f090016;
         public static final int linearLayout6=0x7f09001b;
-        public static final int menuAbout=0x7f090027;
-        public static final int menuEquation=0x7f090028;
+        public static final int menuAbout=0x7f090028;
+        public static final int menuEquation=0x7f090029;
+        public static final int someLayout=0x7f090026;
         public static final int textView1=0x7f090022;
         public static final int textView2=0x7f090024;
         public static final int textView3=0x7f090025;
-        public static final int textView4=0x7f090026;
+        public static final int textView4=0x7f090027;
         public static final int view=0x7f090002;
     }
     public static final class integer {

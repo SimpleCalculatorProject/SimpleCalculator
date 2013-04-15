@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="4"
-            android:inputType="numberDecimal"
+            android:inputType="numberDecimal|numberSigned"
             android:nextFocusDown="@+id/editText2"
             android:nextFocusForward="@+id/editText2"
             android:nextFocusLeft="@+id/editText2"
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="4"
-            android:inputType="numberDecimal"
+            android:inputType="numberDecimal|numberSigned"
             android:nextFocusDown="@+id/editText3"
             android:nextFocusForward="@+id/editText3"
             android:nextFocusLeft="@+id/editText3"
@@ -56,7 +56,7 @@
             android:layout_weight="1"
             android:ems="4"
             android:imeOptions="actionDone"
-            android:inputType="numberDecimal"
+            android:inputType="numberDecimal|numberSigned"
             android:nextFocusDown="@+id/textView3"
             android:nextFocusForward="@+id/textView3"
             android:nextFocusLeft="@+id/textView3"
@@ -71,7 +71,11 @@
             android:text="@string/equation3" />
         
 	</LinearLayout>
-	
+	<LinearLayout 
+	    android:id="@+id/someLayout"
+	    android:layout_width="wrap_content"
+	    android:layout_height="30dp"
+	    android:orientation="horizontal"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -83,7 +87,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textIsSelectable="true"
-            android:hint="@string/equation4" />
+            android:hint="@string/equation4"
+            android:textSize="30sp" />
         
 	</LinearLayout>
 </LinearLayout>
