@@ -240,7 +240,9 @@ public class MainActivity extends Activity {
 			// Then ans will be simplified if possible by using double and integer variables 
 			double test = Double.parseDouble(this.ans);
 			if (test%1==0){
-				this.ans = this.ans.substring(0, this.ans.length()-2);
+				//this.ans = this.ans.substring(0, this.ans.length()-2);
+				Double a = Double.parseDouble(this.ans);
+				this.ans = String.valueOf(a.intValue());
 			}
 			// Last ans will be set for screen
 			String lastText = (String) this.screen.getText();
