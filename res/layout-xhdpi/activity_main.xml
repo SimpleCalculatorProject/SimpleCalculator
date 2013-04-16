@@ -14,18 +14,23 @@
             android:orientation="horizontal"
             android:weightSum="1.0" >
 
+			<ScrollView
+			    android:id="@+id/scroll"
+			    android:layout_width="fill_parent"
+			    android:layout_height="fill_parent" >
+
             <TextView
                 android:id="@+id/view"
                 style="@style/btn"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
                 android:background="@drawable/digis"
                 android:clickable="false"
                 android:gravity="center_vertical"
                 android:text="@string/no0"
                 android:textColor="#000000"
-                android:textSize="25sp" />
+                android:textSize="25sp"  />
+            </ScrollView>
         </LinearLayout>
 
         <LinearLayout

@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
@@ -25,7 +26,8 @@ public class MainActivity extends Activity {
 	 * Here is interface TextView
 	 */
 	TextView screen;
-	
+	ScrollView scroll;
+	String history;
 	/*
 	 * Hear is few static variables for some important chars
 	 */
@@ -37,6 +39,7 @@ public class MainActivity extends Activity {
 	public static String MULTIPLY = "x";
 	public static String PLUS = "+";
 	public static String MINUS = "-";
+	public static double INTMAX = Double.valueOf("9223372036854775807");
 	
 	
 	
@@ -45,6 +48,9 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		screen = (TextView) findViewById(R.id.view);
+		scroll = (ScrollView) findViewById(R.id.scroll);
+		history = "\n\n\n";
+		screen.setText(history + "0");
 		
 	}
 	public void updScreen(){
@@ -54,13 +60,26 @@ public class MainActivity extends Activity {
 		 */
 		if (this.calculate.size() == 0){ 
 			// Set number 0 for screen if no calculation has been given
-			this.screen.setText("0");
+			this.screen.setText(history+"0");
+			scroll.post(new Runnable(){
+				@Override
+				public void run() {
+					scroll.fullScroll(View.FOCUS_DOWN);
+				}
+			});
 			return;
 		}
 		// Idea is show user everything that has been set for ArrayList calculate by getting all Strings and adding them into one and setting that string text for TextView screen
 		String tmp = "";
 		for (String s : this.calculate) tmp = tmp + s;
-		this.screen.setText(tmp);
+		this.screen.setText(history +tmp);
+		scroll.post(new Runnable(){
+			@Override
+			public void run() {
+				scroll.fullScroll(View.FOCUS_DOWN);
+			}
+		});
+		
 	}
 	public void don(View v){
 		/**
@@ -191,7 +210,10 @@ public class MainActivity extends Activity {
 			// In other case last symbol is removed and if next to last string is number string then it will be set to buffer
 			else {
 				calculate.remove(calculate.size()-1);
-				buffer = null;
+				tmp = calculate.get(calculate.size()-1);
+				if (tmp.equals(POTENS)) ;
+				else if (tmp.equals(CBRACKET));
+				else buffer = tmp;
 			}
 		}
 		this.updScreen();
@@ -237,6 +259,8 @@ public class MainActivity extends Activity {
 		}
 		this.updScreen();
 		try {
+			tmp = "";
+			for (String s : this.calculate) tmp = tmp + s;
 			// Try Catch is used to ensure that if some illegal calculate is give for Calculate.java then application don't crash and gives user error message
 			// First in this try calculate we call Calculate.java and give calculate for it
 			new Calculate(this.calculate);
@@ -244,14 +268,16 @@ public class MainActivity extends Activity {
 			this.ans = Calculate.getResult();
 			// Then ans will be simplified if possible by using double and integer variables 
 			double test = Double.parseDouble(this.ans);
-			if (test%1==0){
+			if (test%1==0 && test<INTMAX){
 				//this.ans = this.ans.substring(0, this.ans.length()-2);
 				Double a = Double.parseDouble(this.ans);
-				this.ans = String.valueOf(a.intValue());
+				this.ans = String.valueOf(a.longValue());
 			}
 			// Last ans will be set for screen
-			String lastText = (String) this.screen.getText();
-			this.screen.setText(lastText + "=\n"+this.ans);
+			//String lastText = (String) this.screen.getText();
+			
+			this.screen.setText(history + tmp + "=\n"+this.ans);
+			this.history += tmp + "=\n"+this.ans+"\n\n";
 		}
 		catch(java.lang.Exception e) {
 			// if there is error or exception in try bloc and error message will be given for user
@@ -342,6 +368,12 @@ public class MainActivity extends Activity {
 	    	case R.id.menuEquation:
 	    		Intent equation = new Intent(MainActivity.this, EquationActivity.class);
 	    		MainActivity.this.startActivity(equation);
+	    		return true;
+	    	case R.id.clearHistory:
+	    		history = "\n\n\n";
+	    		buffer = null;
+	    		calculate = new ArrayList<String>();
+	    		this.updScreen();
 	    		return true;
 	    	default:
 	    		return false;

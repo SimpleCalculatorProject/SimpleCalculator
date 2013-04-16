@@ -34,7 +34,7 @@ public final class R {
     }
     public static final class id {
         public static final int about_description=0x7f090000;
-        public static final int back_calulation=0x7f09002a;
+        public static final int back_calulation=0x7f09002c;
         public static final int btnAns=0x7f09001a;
         public static final int btnBracket=0x7f09001e;
         public static final int btnDiv=0x7f09000a;
@@ -57,9 +57,10 @@ public final class R {
         public static final int button8=0x7f09000e;
         public static final int button9=0x7f09000f;
         public static final int buttonClear=0x7f090005;
-        public static final int editText1=0x7f090020;
-        public static final int editText2=0x7f090021;
-        public static final int editText3=0x7f090023;
+        public static final int clearHistory=0x7f09002b;
+        public static final int editText1=0x7f090021;
+        public static final int editText2=0x7f090022;
+        public static final int editText3=0x7f090024;
         public static final int linearLayout1=0x7f090001;
         public static final int linearLayout11=0x7f090004;
         public static final int linearLayout112=0x7f090003;
@@ -68,13 +69,14 @@ public final class R {
         public static final int linearLayout4=0x7f090011;
         public static final int linearLayout5=0x7f090016;
         public static final int linearLayout6=0x7f09001b;
-        public static final int menuAbout=0x7f090028;
-        public static final int menuEquation=0x7f090029;
-        public static final int someLayout=0x7f090026;
-        public static final int textView1=0x7f090022;
-        public static final int textView2=0x7f090024;
-        public static final int textView3=0x7f090025;
-        public static final int textView4=0x7f090027;
+        public static final int menuAbout=0x7f090029;
+        public static final int menuEquation=0x7f09002a;
+        public static final int scroll=0x7f090020;
+        public static final int someLayout=0x7f090027;
+        public static final int textView1=0x7f090023;
+        public static final int textView2=0x7f090025;
+        public static final int textView3=0x7f090026;
+        public static final int textView4=0x7f090028;
         public static final int view=0x7f090002;
     }
     public static final class integer {
@@ -96,6 +98,7 @@ public final class R {
         public static final int backspace=0x7f060012;
         public static final int brackets=0x7f060018;
         public static final int clear=0x7f060013;
+        public static final int clearHistoryStr=0x7f060024;
         public static final int credits=0x7f06001d;
         public static final int division=0x7f060011;
         public static final int equalto=0x7f060017;
