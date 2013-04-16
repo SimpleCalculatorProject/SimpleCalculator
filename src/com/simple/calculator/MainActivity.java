@@ -51,6 +51,7 @@ public class MainActivity extends Activity {
 		scroll = (ScrollView) findViewById(R.id.scroll);
 		history = "\n\n\n";
 		screen.setText(history + "0");
+		this.updScreen();
 		
 	}
 	public void updScreen(){
@@ -99,7 +100,8 @@ public class MainActivity extends Activity {
 				}
 			}
 			// if calculate size is one or more and last symbol is potens it is replaced by number
-			else if (calculate.get(this.calculate.size()-1).equals(POTENS) && calculate.size() != 0){
+			else if (calculate.get(this.calculate.size()-1).equals(POTENS) && calculate.size() != 0 ){
+				if ("ans".equals((String) v.getTag())) return;
 				calculate.remove(calculate.size()-1);
 				buffer = calculate.get(calculate.size()-1);
 				buffer  = buffer + ( (String) v.getTag());
@@ -323,8 +325,11 @@ public class MainActivity extends Activity {
 		 * tosecond() is button listener method for potency button
 		 */
 		if (this.buffer == null ){											//if buffer is empty and if last symbol is closing bracket then potens will be added
-			if (calculate.size() == 0) return;
-			if (calculate.get(calculate.size()-1).equals(CBRACKET)){
+			if (calculate.size() == 0) {
+				calculate.add(ans);
+				calculate.add(POTENS);
+			}
+			else if (calculate.get(calculate.size()-1).equals(CBRACKET)){
 				calculate.add(POTENS);
 			}
 			else return;
