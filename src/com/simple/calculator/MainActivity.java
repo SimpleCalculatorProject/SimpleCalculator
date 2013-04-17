@@ -149,9 +149,20 @@ public class MainActivity extends Activity {
 			this.calculate.add((String) v.getTag());
 		}
 		// if open bracket is only object in calculate then nothing is done
-		else if (this.calculate.get(calculate.size()-1).equals(OBRACKET)&&calculate.size()==1)return;
+		else if (this.calculate.get(calculate.size()-1).equals(OBRACKET)&&calculate.size()==1){
+			if (MINUS.equals(((String) v.getTag()))){
+				buffer = "-";
+				calculate.add(buffer);
+			}
+			this.updScreen();
+			return;
+		}
 		else if (this.buffer != null){
 			// if buffer isn't empty symbol is added to calculate and buffer is emptied
+			if (buffer.equals(MINUS)){
+				this.updScreen();
+				return;
+			}
 			this.calculate.add((String) v.getTag());
 			buffer = null;
 			this.updScreen();
@@ -168,8 +179,14 @@ public class MainActivity extends Activity {
 			// if buffer is empty and last symbol isn't potens, square root or closing bracket then symbol is added to calculate in way that it replaces last symbol
 			else {
 				// if opening bracket is in calculate and new operator is given opening bracket will be wiped
-				if (this.calculate.get(calculate.size()-1).equals("(")){
-					this.calculate.remove(calculate.size()-1);
+				if (this.calculate.get(calculate.size()-1).equals(OBRACKET)){
+					if (MINUS.equals(((String) v.getTag()))){
+						buffer = "-";
+						calculate.add(buffer);
+					}
+					else{
+						this.calculate.remove(calculate.size()-1);
+					}
 					this.updScreen();
 					return;
 				}
@@ -289,9 +306,11 @@ public class MainActivity extends Activity {
 		}
 		catch(java.lang.Exception e) {
 			// if there is error or exception in try bloc and error message will be given for user
-			this.screen.setText("ERROR");
+			this.history += "ERROR \n\n";
+			this.calculate = new ArrayList<String>();
 			//System.out.print(e.toString());
 			this.ans = "0";
+			this.screen.setText(history);
 		}
 		// Buffer is emptied and if calculate is initialize
 		this.calculate = new ArrayList<String>();
@@ -341,6 +360,9 @@ public class MainActivity extends Activity {
 			else return;
 		}
 		else {																//if buffer isn't empty then buffer is emptied and potens symbol will be added
+			if (MINUS.equals(this.buffer) || ".".equals(this.buffer)){
+				return;
+			}
 			buffer = null;
 			calculate.add(POTENS);
 		}
