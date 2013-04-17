@@ -7,26 +7,25 @@
         android:orientation="vertical"
         tools:context=".MainActivity" >
 
-        <LinearLayout
-            android:id="@+id/linearLayout1"
+        <ScrollView
+            android:id="@+id/scroll"
             android:layout_width="fill_parent"
             android:layout_height="135dp"
-            android:orientation="horizontal"
-            android:weightSum="1.0" >
+            android:orientation="horizontal" >
 
             <TextView
                 android:id="@+id/view"
                 style="@style/btn"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               
                 android:background="@drawable/digis"
                 android:clickable="false"
                 android:gravity="center_vertical"
                 android:text="@string/no0"
                 android:textColor="#000000"
                 android:textSize="25sp" />
-        </LinearLayout>
+        </ScrollView>
 
         <LinearLayout
             android:id="@+id/linearLayout112"
