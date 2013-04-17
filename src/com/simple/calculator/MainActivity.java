@@ -23,7 +23,7 @@ public class MainActivity extends Activity {
 	public String buffer = null;										//This String is buffer for adding numbers to the calculate Sting ArrayList
 	public String ans = "0";											//This Sting holds last answer that is calculated and it has default value of 0
 	/*
-	 * Here is interface TextView
+	 * Here is defined screen TextView, SrollView and history string for screen
 	 */
 	TextView screen;
 	ScrollView scroll;
@@ -39,6 +39,9 @@ public class MainActivity extends Activity {
 	public static String MULTIPLY = "x";
 	public static String PLUS = "+";
 	public static String MINUS = "-";
+	/*
+	 * Maximum value of int is defined
+	 */
 	public static double INTMAX = Double.valueOf("9223372036854775807");
 	
 	
@@ -49,8 +52,9 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		screen = (TextView) findViewById(R.id.view);
 		scroll = (ScrollView) findViewById(R.id.scroll);
+		// history string is initialized
 		history = "\n\n\n";
-		screen.setText(history + "0");
+		// screen is initialized
 		this.updScreen();
 		
 	}
@@ -73,7 +77,9 @@ public class MainActivity extends Activity {
 		// Idea is show user everything that has been set for ArrayList calculate by getting all Strings and adding them into one and setting that string text for TextView screen
 		String tmp = "";
 		for (String s : this.calculate) tmp = tmp + s;
+		// history and calculation is added to screen
 		this.screen.setText(history +tmp);
+		// After screen update we auto scroll screen to down
 		scroll.post(new Runnable(){
 			@Override
 			public void run() {
@@ -367,14 +373,17 @@ public class MainActivity extends Activity {
 	    // Handle item selection
 	    switch (item.getItemId()) {
 	    	case R.id.menuAbout:
+	    		// if menuAbout is chosen new activity for credits/about view is started
 	    		Intent about = new Intent(MainActivity.this, AboutActivity.class);
 	    		MainActivity.this.startActivity(about);
 	    		return true;
 	    	case R.id.menuEquation:
+	    		// if menuEquation is chosen new activity for equation view is started
 	    		Intent equation = new Intent(MainActivity.this, EquationActivity.class);
 	    		MainActivity.this.startActivity(equation);
 	    		return true;
 	    	case R.id.clearHistory:
+	    		// if clearHistory is chosen calculation is history is cleared and set to screen
 	    		history = "\n\n\n";
 	    		buffer = null;
 	    		calculate = new ArrayList<String>();
