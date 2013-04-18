@@ -7,6 +7,7 @@
         android:title="@string/menu_about">
     </item>
     <item android:id="@+id/menuEquation" android:title="@string/menu_equation" android:showAsAction="never" android:orderInCategory="100"></item>
-    <item android:id="@+id/clearHistory" android:title="@string/clearHistoryStr" android:orderInCategory="100"></item>
+    <item android:id="@+id/menu_share" android:title="@string/str_share" android:orderInCategory="100"></item><item android:id="@+id/clearHistory" android:title="@string/clearHistoryStr" android:orderInCategory="100"></item>
+    
 
 </menu>

@@ -38,5 +38,6 @@
     <string name="equation4">Result</string>
     <string name="menu_equation">Solve an equation</string>
     <string name="clearHistoryStr">Clear History</string>
+    <string name="str_share">Share</string>
 
 </resources>
