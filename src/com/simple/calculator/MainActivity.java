@@ -276,6 +276,19 @@ public class MainActivity extends Activity {
 			if (this.calculate.get(i).equals(OBRACKET)) open++;
 			else if (this.calculate.get(i).equals(CBRACKET)) open--;
 			else if (this.calculate.get(i).equals(MULTIPLY)) this.calculate.set(i, "*");
+			else if (this.calculate.get(i).equals(".")) this.calculate.set(i, "0");
+			else if (this.calculate.get(i).startsWith(".")) this.calculate.set(i, "0"+this.calculate.get(i));
+			else if (this.calculate.get(i).endsWith(".")) this.calculate.set(i, this.calculate.get(i)+ "0");
+			else if (this.calculate.size() > 1 && i != 0){
+				if (this.calculate.get(i).equals("-") && this.calculate.get(i-1).equals("(")){
+					if (i != (this.calculate.size() + 1))
+						if (this.calculate.get(i+1).equals(")"))
+							this.calculate.set(i, "-0");
+					else
+						this.calculate.set(i, "-0");
+				}					
+			}
+			
 		}
 		while (open > 0){
 			// This while loop will close all open brackets
