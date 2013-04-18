@@ -283,8 +283,8 @@ public class MainActivity extends Activity {
 			open--;
 		}
 		this.updScreen();
+		tmp = "";
 		try {
-			tmp = "";
 			for (String s : this.calculate) tmp = tmp + s;
 			// Try Catch is used to ensure that if some illegal calculate is give for Calculate.java then application don't crash and gives user error message
 			// First in this try calculate we call Calculate.java and give calculate for it
@@ -306,7 +306,7 @@ public class MainActivity extends Activity {
 		}
 		catch(java.lang.Exception e) {
 			// if there is error or exception in try bloc and error message will be given for user
-			this.history += "ERROR \n\n";
+			this.history += tmp + "=\n"+ "ERROR \n\n";
 			this.calculate = new ArrayList<String>();
 			//System.out.print(e.toString());
 			this.ans = "0";
