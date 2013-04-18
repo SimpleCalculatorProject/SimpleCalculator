@@ -39,7 +39,7 @@ public class EquationActivity extends Activity {
 						else{
 							String pr = "";
 							for (String s : a)
-								pr += s + "\n";
+								pr += s + "\n\n";
 							res.setText(pr);
 						}
 					}
