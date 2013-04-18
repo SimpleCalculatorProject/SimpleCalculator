@@ -306,7 +306,7 @@ public class MainActivity extends Activity {
 		}
 		catch(java.lang.Exception e) {
 			// if there is error or exception in try bloc and error message will be given for user
-			this.history += tmp + "=\n"+ "ERROR \n\n";
+			this.history += tmp + "=\n"+"ERROR \n\n";
 			this.calculate = new ArrayList<String>();
 			//System.out.print(e.toString());
 			this.ans = "0";
@@ -404,6 +404,12 @@ public class MainActivity extends Activity {
 	    		// if menuEquation is chosen new activity for equation view is started
 	    		Intent equation = new Intent(MainActivity.this, EquationActivity.class);
 	    		MainActivity.this.startActivity(equation);
+	    		return true;
+	    	case R.id.menu_share:
+	    		Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
+	    		shareIntent.setType("text/plain");
+	    		shareIntent.putExtra(Intent.EXTRA_TEXT, "Simple Calculator" + history);
+	    		startActivity(Intent.createChooser(shareIntent, "Share..."));
 	    		return true;
 	    	case R.id.clearHistory:
 	    		// if clearHistory is chosen calculation is history is cleared and set to screen
