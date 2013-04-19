@@ -258,10 +258,15 @@ public class MainActivity extends Activity {
 				this.updScreen();
 				return;
 			}
-			else if (tmp.equals(OBRACKET)){
-				// if last symbol is "(" and calculate is longer than 1 then last two symbol are removed from calculate
+			else if (tmp.equals(OBRACKET) || tmp.equals(SQROOT)){
+				// if last symbol is "(" or square root and calculate is longer than 1 then:
+				// 1. Last symbol is removed
+				// 2. Recursion is used to make new 'validation' of calculation
+				// 3. Recursion ends and result is displayed for user
+				// 4. Return; is used that calculation is not done many times
 				this.calculate.remove(this.calculate.size()-1);
-				this.calculate.remove(this.calculate.size()-1);
+				calc(v);
+				return;
 			}
 			else{
 				// in other cases last symbol will be removed
@@ -273,13 +278,14 @@ public class MainActivity extends Activity {
 			// This for loop has two purposes:
 			// 1. count how many open brackets are in calculate
 			// 2. change "x" symbols to "*" symbols
+			// 3. handles error control like change "." to "0.0" for example
 			if (this.calculate.get(i).equals(OBRACKET)) open++;
 			else if (this.calculate.get(i).equals(CBRACKET)) open--;
-			else if (this.calculate.get(i).equals(MULTIPLY)) this.calculate.set(i, "*");
 			else if (this.calculate.get(i).equals(".")) this.calculate.set(i, "0");
-			else if (this.calculate.get(i).startsWith(".")) this.calculate.set(i, "0"+this.calculate.get(i));
-			else if (this.calculate.get(i).endsWith(".")) this.calculate.set(i, this.calculate.get(i)+ "0");
-			else if (this.calculate.size() > 1 && i != 0){
+			if (this.calculate.get(i).startsWith(".")) this.calculate.set(i, "0"+this.calculate.get(i));
+			if (this.calculate.get(i).startsWith("-.")) this.calculate.set(i, "-0"+this.calculate.get(i).substring(1));
+			if (this.calculate.get(i).endsWith(".")) this.calculate.set(i, this.calculate.get(i)+ "0");
+			if (this.calculate.size() > 1 && i != 0){
 				if (this.calculate.get(i).equals("-") && this.calculate.get(i-1).equals("(")){
 					if (i != (this.calculate.size() + 1))
 						if (this.calculate.get(i+1).equals(")"))
@@ -288,20 +294,22 @@ public class MainActivity extends Activity {
 						this.calculate.set(i, "-0");
 				}					
 			}
-			
 		}
 		while (open > 0){
 			// This while loop will close all open brackets
 			this.calculate.add(CBRACKET);
 			open--;
 		}
+		ArrayList<String> temp = new ArrayList<String>();
+		for (String zz : this.calculate) temp.add(zz);
+		for (int i = 0; i < temp.size(); i++) if (temp.get(i).equals(MULTIPLY)) temp.set(i, "*");
 		this.updScreen();
 		tmp = "";
 		try {
 			for (String s : this.calculate) tmp = tmp + s;
 			// Try Catch is used to ensure that if some illegal calculate is give for Calculate.java then application don't crash and gives user error message
 			// First in this try calculate we call Calculate.java and give calculate for it
-			new Calculate(this.calculate);
+			new Calculate(temp);
 			// Then answer from calculation is saved to ans
 			this.ans = Calculate.getResult();
 			// Then ans will be simplified if possible by using double and integer variables 
