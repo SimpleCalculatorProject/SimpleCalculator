@@ -15,8 +15,8 @@ public class MainActivity extends Activity {
 	/**
 	 * Project Simple Calculator : Main Activity
 	 * This class is main activity class for Simple Calculator project
-	 * In this class is portrait mode for calculator interface found in activity_main.xml
-	 * This is only interface class and all calculations are done in different class
+	 * In this class is portrait mode for calculator layout found in activity_main.xml
+	 * This is only activity handler class and all calculations are done in different class (calculate.java)
 	 * Class tries to be smart about what inputs are valid and what are not and that way prevent user errors
 	 */
 	public ArrayList<String> calculate = new ArrayList<String>();		//This ArrayList holds calculation
@@ -393,7 +393,7 @@ public class MainActivity extends Activity {
 		/**
 		 * squeroot() is button listener for square root button
 		 */
-		if (this.buffer != null) return;									//if buffer isn't null then nothing will be done
+		if (this.buffer != null) return;				//if buffer isn't null then nothing will be done
 		if (calculate.size() != 0){										
 			if (calculate.get(calculate.size()-1).equals(POTENS)) return;
 			else if (calculate.get(calculate.size()-1).equals(SQROOT)){
@@ -402,7 +402,7 @@ public class MainActivity extends Activity {
 			}
 			else calculate.add(SQROOT);
 		}
-		else calculate.add(SQROOT);												//if last symbol is not potens then square root will be added
+		else calculate.add(SQROOT);		//if last symbol is not potens then square root will be added
 		this.updScreen();
 	}
 	
@@ -427,6 +427,11 @@ public class MainActivity extends Activity {
 	    		MainActivity.this.startActivity(equation);
 	    		return true;
 	    	case R.id.menu_share:
+	    		// if menu_shae is chosen share intent is made. In share intent current calculation history is shared
+	    		// with any compatible service. Intent shares calculation history data plain/text.
+	    		// Facebook wall post is not possible to do with this type intent because Facebook policy doesn't allow it.
+	    		// This intent is test with: Facebook Messenger, Stock text message app of Android JB, WhatsApp, KiK messenger 
+	    		// and email client and Samsung notepad app.
 	    		Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
 	    		shareIntent.setType("text/plain");
 	    		shareIntent.putExtra(Intent.EXTRA_TEXT, "Simple Calculator" + history);
