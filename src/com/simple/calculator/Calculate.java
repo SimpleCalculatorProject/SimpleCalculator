@@ -4,6 +4,8 @@ package com.simple.calculator;
 import java.util.ArrayList;
 import java.math.BigDecimal;
 
+import android.util.Log;
+
 public class Calculate {
 	
 	static String result = "0";
@@ -129,7 +131,7 @@ public class Calculate {
 	public static String division(String x, String y){	// Calculates x / y
 		BigDecimal xx = new BigDecimal(x);
 		BigDecimal yy = new BigDecimal(y);
-		BigDecimal zz = xx.divide(yy);
+		BigDecimal zz = xx.divide(yy, 10, BigDecimal.ROUND_HALF_UP);
 		return zz.toString();
 	}
 	
