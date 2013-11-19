@@ -2,6 +2,7 @@ package com.simple.calculator;
 
 
 import java.util.ArrayList;
+import java.math.BigDecimal;
 
 public class Calculate {
 	
@@ -105,37 +106,37 @@ public class Calculate {
 	}
 	
 	public static String addition(String x, String y){	// Calculates x + y
-		double xx = Double.parseDouble(x);
-		double yy = Double.parseDouble(y);
-		double zz = xx + yy;
-		return Double.toString(zz);
+		BigDecimal xx = new BigDecimal(x);
+		BigDecimal yy = new BigDecimal(y);
+		BigDecimal zz = xx.add(yy);
+		return zz.toString();
 	}
 	
 	public static String subtraction(String x, String y){	// Calculates x - y
-		double xx = Double.parseDouble(x);
-		double yy = Double.parseDouble(y);
-		double zz = xx - yy;
-		return Double.toString(zz);
+		BigDecimal xx = new BigDecimal(x);
+		BigDecimal yy = new BigDecimal(y);
+		BigDecimal zz = xx.subtract(yy);
+		return zz.toString();
 	}
 	
 	public static String multiplication(String x, String y){	// Calculates x * y
-		double xx = Double.parseDouble(x);
-		double yy = Double.parseDouble(y);
-		double zz = xx * yy;
-		return Double.toString(zz);
+		BigDecimal xx = new BigDecimal(x);
+		BigDecimal yy = new BigDecimal(y);
+		BigDecimal zz = xx.multiply(yy);
+		return zz.toString();
 	}
 	
 	public static String division(String x, String y){	// Calculates x / y
-		double xx = Double.parseDouble(x);
-		double yy = Double.parseDouble(y);
-		double zz = xx / yy;
-		return Double.toString(zz);
+		BigDecimal xx = new BigDecimal(x);
+		BigDecimal yy = new BigDecimal(y);
+		BigDecimal zz = xx.divide(yy);
+		return zz.toString();
 	}
 	
 	public static String square(String x){	// Calculates x²
-		double xx = Double.parseDouble(x);
-		double zz = xx * xx;
-		return Double.toString(zz);
+		BigDecimal xx = new BigDecimal(x);
+		BigDecimal zz = xx.multiply(xx);
+		return zz.toString();
 	}
 	
 	public static String squareRoot(String x){	// Calculates √x
