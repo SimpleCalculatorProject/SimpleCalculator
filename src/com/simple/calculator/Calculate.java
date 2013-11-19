@@ -4,7 +4,6 @@ package com.simple.calculator;
 import java.util.ArrayList;
 import java.math.BigDecimal;
 
-import android.util.Log;
 
 public class Calculate {
 	
